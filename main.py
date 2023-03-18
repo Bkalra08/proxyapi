@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/AdminDetails/<path:path>', methods=['GET', 'POST', 'PUT', 'DELETE'])
 def proxy(path):
-    url = f"bookingadmin-production.up.railway.app/AdminDetails/{path}"
+    url = f"https://bookingadmin-production.up.railway.app/AdminDetails/{path}"
     method = request.method.lower()
     headers = {'Content-Type': 'application/json'}
     data = request.get_json() if request.method in ['POST', 'PUT'] else None
